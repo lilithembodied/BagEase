@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Updates</title>
+    <link rel="stylesheet" href="stylet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar (With Home Button) -->
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-train"></i> Bag<span class="highlight" style="color:red">E</span>ase
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="./index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#contact"><i class="fa fa-phone-alt"></i> Contact</a></li>
+                <li><a href="./about.html"><i class="fa fa-info-circle"></i> About</a></li>
+                <li><a href="book.html" class="cta-button"><i class="fa fa-suitcase-rolling"></i> Book</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <!-- Scrolling Train Announcements -->
+    <div class="marquee">
+        <span id="announcement">Latest Train Updates: Train 12345 running 10 min late | Train 67890 arriving on time | Platform changes for Train 54321...</span>
+    </div>
+
+    <!-- Train Updates Form -->
+    <div class="updates-container">
+        <h2>Train Updates</h2>
+        
+        <form id="train-update-form">
+            <div class="form-group">
+                <label for="pnr">Enter PNR Number (For Registered Users)</label>
+                <input type="text" id="pnr" name="pnr" placeholder="Enter your PNR number">
+            </div>
+            <div class="form-group">
+                <label for="station">Enter Station Name (For Public Updates)</label>
+                <input type="text" id="station" name="station" placeholder="Enter station name">
+            </div>
+            <button type="submit" class="cta-button">Check Status</button>
+        </form>
+
+        <div class="train-status" id="train-status">
+            <h3>Train Status</h3>
+            <p id="status-message"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("train-update-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let pnr = document.getElementById("pnr").value.trim();
+            let station = document.getElementById("station").value.trim();
+            let statusMessage = document.getElementById("status-message");
+            let statusBox = document.getElementById("train-status");
+
+            if (pnr && station) {
+                alert("Please enter either PNR number OR station name, not both.");
+                return;
+            }
+
+            if (pnr) {
+                // Simulate fetching train status for registered users
+                statusMessage.innerHTML = "Train 12345 is <b>10 minutes late</b>.";
+                statusBox.style.display = "block";
+            } else if (station) {
+                // Simulate fetching general updates for non-registered users
+                statusMessage.innerHTML = "Upcoming trains at " + station + ": <br> Train 56789 - On Time <br> Train 23456 - Delayed by 15 mins";
+                statusBox.style.display = "block";
+            } else {
+                alert("Please enter either a PNR number or a station name.");
+            }
+        });
+    </script>
+
+</body>
+</html>
