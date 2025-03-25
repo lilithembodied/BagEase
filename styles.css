@@ -1,0 +1,829 @@
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f5f5f5;
+    color: #333;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight {
+    font-size: 66px;
+    color: #d83627;
+}
+
+/* Navbar */
+.sticky-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 4px solid #3b2f28;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    background-color: #f8d1b8;
+    padding: 8px 15px; /* Increased padding for better spacing */
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+
+    /* Flexbox for horizontal alignment */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds space between icon and text */
+}
+
+/* Ensures icons are properly sized */
+.nav-links i {
+    font-size: 22px; /* Adjust icon size */
+    display: inline-flex; /* Prevents unwanted spacing issues */
+    align-items: center;
+}
+
+
+.nav-links a:hover {
+    color: #ff6600;
+}
+
+/* Responsive Navbar */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+        display: none;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* CTA Button */
+.cta-button {
+    background: linear-gradient(135deg, #ff6600, #ff3300);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px dashed white;
+    letter-spacing: 1.2px;
+    font-size: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.cta-button:hover {
+    background: linear-gradient(135deg, #ff3300, #d83627);
+    box-shadow: 0px 6px 18px rgba(255, 51, 0, 0.6);
+    transform: scale(1.05);
+}
+
+/* Overlay text and arrow */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Downward Arrow */
+.scroll-down {
+    display: block;
+    font-size: 36px;
+    color: white;
+    margin-top: 10px;
+    text-decoration: none;
+    animation: bounce 1s infinite;
+}
+
+.scroll-down:hover {
+    color: #ff6600;
+}
+
+/* Bouncing Arrow Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 80px 5%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    color: #ddd;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: clamp(18px, 2vw, 20px);
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Explore Section */
+.explore {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+    background: white;
+    border-top: 6px dashed #3b2f28;
+    border-bottom: 6px dashed #3b2f28;
+}
+
+.explore-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    max-width: 1200px;
+}
+
+.typo {
+    flex: 1;
+    text-align: center;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 700;
+    color: #222;
+}
+
+.image {
+    position: relative;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.overlay-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Explore Section */
+.explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    background: white;
+    border-top: 6px dashed #3b2f28;
+    border-bottom: 10px dashed #3b2f28;
+}
+
+.explore-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    max-width: 1200px;
+}
+.typo {
+    text-align: justify;
+    font-family: "Exo", sans-serif;
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    transition: transform 0.3s ease;
+    padding: 10px;
+}
+.typo:hover {
+    transform: scale(1.05);
+}
+.image {
+    position: relative;
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.explore-text {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff6600;
+    text-decoration: none;
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 3px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.explore-text:hover {
+    color: #d83627;
+    border-color: #d83627;
+}
+
+.arrow {
+    font-size: 20px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.explore-text:hover .arrow {
+    transform: translateY(3px);
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 80px 10%;
+    background: #f9f9f9;
+    border-bottom: 10px dashed #3b2f28;
+}
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    
+}
+.service {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.service img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.reviews {
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Reviews Section */
+.reviews {
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 300px;
+    text-align: center;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.stars {
+    font-size: 20px;
+    color: #f4c430; /* Golden color for stars */
+}
+
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 4px dashed #3b2f28;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cta-button {
+    font-family: 'Space Grotesk', sans-serif;
+    border: 2px dashed white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 100%;
+    }
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 4px dashed #3b2f28;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Logo Styling */
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.logo i {
+    padding: 5px;
+    font-size: 50px;
+    color: #d83627;
+}
+
+/* Footer Styling */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 20px 10%;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links {
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #ff6600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #ff6600;
+}
+
+/* Button and Link Hover Effects */
+.cta-button:hover,
+.nav-links a:hover {
+    transform: scale(1.05);
+}
+h2 {
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Exo", sans-serif;
+    flex: 1;
+    font-size: 2rem;
+    color: #222;
+    transition: transform 0.3s ease;
+    padding: 10px;
+}
+.cta-button {
+    display: inline-block;
+    font-size: 24px;  /* Increased font size */
+    padding: 12px 26px;  /* More padding for a larger button */
+    background-color: #d83627;  /* Eye-catching red color */
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;  /* Rounded corners */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button i {
+    font-size: 24px; /* Bigger train icon */
+    margin-right: 8px; /* Spacing between icon and text */
+}
+
+.cta-button:hover {
+    background-color: #b02a1f;  /* Darker red on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+#dropdown
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button (Services tab) */
+.dropbtn {
+    background-color: #f8d1b8;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    
+    /* Ensures the dropdown is right below "Services" */
+    top: 100%; /* Aligns right below */
+    left: 0; /* Aligns with the tab */
+    padding: 5px 0;
+    border-top: 3px solid #d83627; /* Adds a small top border for a polished look */
+}
+
+/* Dropdown Links */
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button (Services tab) */
+.dropbtn {
+    background-color: #f8d1b8;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    
+    /* Ensures the dropdown is right below "Services" */
+    top: 100%; /* Aligns right below */
+    left: 0; /* Aligns with the tab */
+    padding: 5px 0;
+    border-top: 3px solid #d83627; /* Adds a small top border for a polished look */
+}
+
+/* Dropdown Links */
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+/* Hover Effects */
+.dropdown-content a:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Arrow */
+.dropbtn i.fa-chevron-down {
+    font-size: 16px;
+}
+
+/* =======================
+   💫 About Section Styling
+   ======================= */
+   .about-section {
+    background: #f5f5f5;
+    padding: 120px 20px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Container Styling */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.about-container:hover {
+    transform: scale(1.02);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 46px;
+    font-weight: 700;
+    color: #d83627;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.section-title:hover {
+    color: #ff6600;
+}
+
+/* About Content Layout */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+/* About Text Styling */
+.about-text {
+    flex: 1;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Text Paragraphs */
+.about-text p {
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: #444;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Section Headings */
+.about-text h3 {
+    font-size: 28px;
+    color: #222;
+    margin: 20px 0 10px;
+    font-weight: 700;
+}
+
+/* Highlighted Lists */
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-list li {
+    font-size: 18px;
+    padding: 12px 0;
+    color: #444;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.about-list li::before {
+    content: "✔";
+    color: #ff6600;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 22px;
+}
+
+/* About Image */
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+

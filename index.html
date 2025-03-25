@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BagEase - Hassle-Free Travel</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-train"></i> Bag<span class="highlight">E</span>ase
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn"><i class="fa fa-cogs"></i> Services <i class="fa fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#home-train">Luggage Pickup</a></li>
+                        <li><a href="#transit-storage">Luggage Storage</a></li>
+                        <li><a href="#multi-point">Luggage Delivery</a></li>
+                        <li><a href="#tracking-security">Tracking</a></li>
+                        <li><a href="#express-handling">Insurance</a></li>
+                    </ul>
+                </li>
+            
+                <li><a href="#tracking"><i class="fa fa-subway"></i> Train Updates</a></li>
+                <li><a href="#tracking-security"><i class="fa fa-map-marker-alt"></i> Tracking</a></li>
+                <li><a href="#contact"><i class="fa fa-phone-alt"></i> Contact</a></li>
+                <li><a href="./about.html"><i class="fa fa-info-circle"></i> About</a></li>
+                <li><a href="book.html" class="cta-button"><i class="fa fa-suitcase-rolling"></i> Book</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Seamless Travel, Zero Hassle</h1>
+            <p>Your luggage, delivered with ease.</p>
+        </div>
+    </section>
+
+    <section class="explore" id="explore">
+        <div class="explore-wrapper">
+            <div class="typo">
+                <p>
+                    <span style="font-weight: bolder; font-size: 30px; padding: 5px">STEP INTO HASSLE-FREE TRAVEL</span><br><br>
+                    With <strong>BagEase</strong>, store, deliver, and pick up your baggage effortlessly. Enjoy stress-free travel with our seamless service.
+                </p>
+            </div>
+            <div class="image">
+                <img src="luggage.png" alt="Luggage Service">
+                <div class="overlay">
+                    <span class="overlay-text">Ready, Steady, Go!</span>
+                    <a href="#services" class="scroll-down">
+                        &#8595;
+                    </a>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service">
+                <img src="bag1.jpg" alt="Storage">
+                <h3>Baggage Storage</h3>
+                <p>Store your luggage securely and travel worry-free.</p>
+            </div>
+            <div class="service">
+                <img src="bag2.jpg" alt="Delivery">
+                <h3>Baggage Delivery</h3>
+                <p>Have your luggage delivered straight to your doorstep.</p>
+            </div>
+            <div class="service">
+                <img src="bag.jpg" alt="Pickup">
+                <h3>Baggage Pick-up</h3>
+                <p>We collect your luggage from your location for added convenience.</p>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="grid">
+            <div class="review-card">
+                <h3 class="review-name">Aisha Patel</h3>
+                <p class="review-text">I was skeptical at first, but tracking my bag in real-time was a game-changer.</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card">
+                <h3 class="review-name">Rahul Sharma</h3>
+                <p class="review-text">Perfect for elderly parents—they don't have to lift a thing anymore.</p>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card">
+                <h3 class="review-name">Sanya Kapoor</h3>
+                <p class="review-text">Makes train travel so much easier—just book, board, and go.</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>Contact: info@bagease.com | 123-456-7890</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

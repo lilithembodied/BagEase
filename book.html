@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Luggage</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-train"></i> Bag<span class="highlight">E</span>ase
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#services"><i class="fa fa-cogs"></i> Services</a></li>
+                <li><a href="#about"><i class="fa fa-info-circle"></i> About</a></li>
+                <li><a href="#contact"><i class="fa fa-phone-alt"></i> Contact</a></li>
+                <li><a href="#partners"><i class="fa fa-handshake"></i> Support</a></li>
+                <li><a href="#tracking"><i class="fa fa-map-marker-alt"></i> Tracking</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="whole">
+    <div class="booking-container">
+        <h2>Book Your Luggage</h2>
+        
+        <form action="submit_booking.php" method="POST">
+            <h3>Personal & Contact Information</h3>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email (Optional)</label>
+                <input type="email" id="email" name="email">
+            </div>
+            
+            <h3>Journey & Train Details</h3>
+            <div class="form-group">
+                <label for="pnr">PNR Number</label>
+                <input type="text" id="pnr" name="pnr" required>
+            </div>
+            <div class="form-group">
+                <label for="train">Train Number & Name</label>
+                <input type="text" id="train" name="train" required>
+            </div>
+            <div class="form-group">
+                <label for="travel-date">Date & Time of Travel</label>
+                <input type="datetime-local" id="travel-date" name="travel-date" required>
+            </div>
+            <div class="form-group">
+                <label for="boarding">Boarding Station</label>
+                <input type="text" id="boarding" name="boarding" required>
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination Station</label>
+                <input type="text" id="destination" name="destination" required>
+            </div>
+            <div class="form-group">
+                <label for="seat">Coach & Seat Number (Optional)</label>
+                <input type="text" id="seat" name="seat">
+            </div>
+            
+            <h3>Luggage Pickup Details</h3>
+            <div class="form-group">
+                <label for="pickup-address">Pickup Address</label>
+                <input type="text" id="pickup-address" name="pickup-address" required>
+            </div>
+            <div class="form-group">
+                <label for="pickup-time">Preferred Pickup Date & Time</label>
+                <input type="datetime-local" id="pickup-time" name="pickup-time" required>
+            </div>
+            <div class="form-group">
+                <label for="bags">Number of Bags</label>
+                <input type="number" id="bags" name="bags" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Approximate Weight</label>
+                <input type="text" id="weight" name="weight">
+            </div>
+            <div class="form-group">
+                <label for="instructions">Special Instructions (Optional)</label>
+                <textarea id="instructions" name="instructions"></textarea>
+            </div>
+            
+            <h3>Drop-Off & Delivery Preferences</h3>
+            <div class="form-group">
+                <label for="drop-location">Drop-Off Location</label>
+                <input type="text" id="drop-location" name="drop-location" required>
+            </div>
+            <div class="form-group">
+                <label for="delivery-mode">Delivery Mode</label>
+                <select id="delivery-mode" name="delivery-mode">
+                    <option value="standard">Standard</option>
+                    <option value="express">Express</option>
+                    <option value="scheduled">Scheduled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alt-contact">Alternate Contact Number (Optional)</label>
+                <input type="tel" id="alt-contact" name="alt-contact">
+            </div>
+            
+            <h3>Payment & Confirmation</h3>
+            <div class="form-group">
+                <label for="payment">Payment Mode</label>
+                <select id="payment" name="payment">
+                    <option value="upi">UPI</option>
+                    <option value="card">Debit/Credit Card</option>
+                    <option value="wallet">Wallet</option>
+                    <option value="cod">Cash on Delivery</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="insurance"> Opt-In for Luggage Insurance (Optional)
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required> I agree to the Terms & Conditions
+                </label>
+            </div>
+            
+            <button type="submit" class="cta-button">Confirm Booking</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
